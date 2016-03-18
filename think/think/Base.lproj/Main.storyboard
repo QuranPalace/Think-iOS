@@ -20,16 +20,28 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" minimumZoomScale="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="dIB-Y3-xjp">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aTP-4B-pQS">
+                                <rect key="frame" x="60" y="600" width="480" height="128"/>
+                                <color key="backgroundColor" red="1" green="0.79701659479999998" blue="0.83375934709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="wuT-Lm-YIA"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dIB-Y3-xjp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="3DT-NR-p4d"/>
+                            <constraint firstItem="aTP-4B-pQS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="60" id="9kQ-le-V9P"/>
+                            <constraint firstAttribute="bottom" secondItem="aTP-4B-pQS" secondAttribute="bottom" constant="-128" id="IYV-yd-xhT"/>
+                            <constraint firstAttribute="trailing" secondItem="aTP-4B-pQS" secondAttribute="trailing" constant="60" id="WK6-Eq-0kX"/>
                             <constraint firstItem="dIB-Y3-xjp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XeX-FG-DDW"/>
                             <constraint firstAttribute="trailing" secondItem="dIB-Y3-xjp" secondAttribute="trailing" id="jZh-wv-elF"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dIB-Y3-xjp" secondAttribute="bottom" id="jyN-tq-a08"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="noteView" destination="aTP-4B-pQS" id="CXW-dI-WmB"/>
+                        <outlet property="noteViewConstraint" destination="IYV-yd-xhT" id="bua-rg-ygO"/>
                         <outlet property="scrollView" destination="dIB-Y3-xjp" id="rXq-qy-mP3"/>
                     </connections>
                 </viewController>

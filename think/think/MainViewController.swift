@@ -14,9 +14,12 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     
     var mainView = UIView()
     
+    
     // MARK: - outlets
 
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var noteView: UIView!
+    @IBOutlet weak var noteViewConstraint: NSLayoutConstraint!
     
     // MARK: - view controller's life cycle
     
@@ -47,21 +50,43 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         let width = self.view.frame.width
         //let height = self.view.frame.height
         if longPressGestureRecognizer.state == .Began {
-            UIView.animateWithDuration(0.6, animations: {
-                self.scrollView.zoomScale = width / (width + 60)
-                self.scrollView.contentOffset.x -= 30
-                self.mainView.alpha -= 0.5
+            UIView.animateWithDuration(0.3,
+                delay: 0, options: UIViewAnimationOptions.CurveEaseOut,
+                animations: {
+                    self.scrollView.zoomScale = width / (width + 60)
+                    self.scrollView.contentOffset.x -= 30
+                    self.mainView.alpha -= 0.5
                 },
-                completion: nil)
+                completion: { _ in
+                    self.view.layoutIfNeeded()
+                    UIView.animateWithDuration(0.3,
+                        delay: 0, options: UIViewAnimationOptions.CurveEaseOut,
+                        animations: {
+                            self.noteViewConstraint.constant = -(self.noteView.frame.height - 40)
+                            self.view.layoutIfNeeded()
+                        },
+                        completion: nil)
+            })
         }
         
         if longPressGestureRecognizer.state == .Ended {
-            UIView.animateWithDuration(0.6, animations: {
-                self.scrollView.contentOffset.x += 30
-                self.scrollView.zoomScale = 1
-                self.mainView.alpha += 0.5
+            UIView.animateWithDuration(0.3,
+                delay: 0, options: UIViewAnimationOptions.CurveEaseOut,
+                animations: {
+                    self.scrollView.contentOffset.x += 30
+                    self.scrollView.zoomScale = 1
+                    self.mainView.alpha += 0.5
                 },
-                completion: nil)
+                completion: { _ in
+                    self.view.layoutIfNeeded()
+                    UIView.animateWithDuration(0.3,
+                        delay: 0, options: UIViewAnimationOptions.CurveEaseOut,
+                        animations: {
+                            self.noteViewConstraint.constant = -(self.noteView.frame.height)
+                            self.view.layoutIfNeeded()
+                        },
+                        completion: nil)
+            })
         }
     }
     
@@ -73,8 +98,6 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         
         // setting scrollview initial zoom
         self.scrollView.pinchGestureRecognizer?.enabled = false
-        
-        
     }
     
     func addViewsToScrollView() {
