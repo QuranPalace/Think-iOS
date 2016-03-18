@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F58B8C751C78AB4E00A14A2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58B8C741C78AB4E00A14A2F /* AppDelegate.swift */; };
-		F58B8C771C78AB4E00A14A2F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58B8C761C78AB4E00A14A2F /* ViewController.swift */; };
+		F58B8C771C78AB4E00A14A2F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58B8C761C78AB4E00A14A2F /* MainViewController.swift */; };
 		F58B8C7A1C78AB4E00A14A2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F58B8C781C78AB4E00A14A2F /* Main.storyboard */; };
 		F58B8C7C1C78AB4E00A14A2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F58B8C7B1C78AB4E00A14A2F /* Assets.xcassets */; };
 		F58B8C7F1C78AB4E00A14A2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F58B8C7D1C78AB4E00A14A2F /* LaunchScreen.storyboard */; };
@@ -28,7 +28,7 @@
 /* Begin PBXFileReference section */
 		F58B8C711C78AB4E00A14A2F /* think.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = think.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F58B8C741C78AB4E00A14A2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F58B8C761C78AB4E00A14A2F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F58B8C761C78AB4E00A14A2F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F58B8C791C78AB4E00A14A2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F58B8C7B1C78AB4E00A14A2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F58B8C7E1C78AB4E00A14A2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,6 +56,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F57F88EB1C9BEB5700A8D3AF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F58B8C761C78AB4E00A14A2F /* MainViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		F57F88EC1C9BEB9000A8D3AF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		F58B8C681C78AB4E00A14A2F = {
 			isa = PBXGroup;
 			children = (
@@ -77,8 +92,9 @@
 		F58B8C731C78AB4E00A14A2F /* think */ = {
 			isa = PBXGroup;
 			children = (
+				F57F88EC1C9BEB9000A8D3AF /* Views */,
+				F57F88EB1C9BEB5700A8D3AF /* Controllers */,
 				F58B8C741C78AB4E00A14A2F /* AppDelegate.swift */,
-				F58B8C761C78AB4E00A14A2F /* ViewController.swift */,
 				F58B8C781C78AB4E00A14A2F /* Main.storyboard */,
 				F58B8C7B1C78AB4E00A14A2F /* Assets.xcassets */,
 				F58B8C7D1C78AB4E00A14A2F /* LaunchScreen.storyboard */,
@@ -197,7 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F58B8C771C78AB4E00A14A2F /* ViewController.swift in Sources */,
+				F58B8C771C78AB4E00A14A2F /* MainViewController.swift in Sources */,
 				F58B8C751C78AB4E00A14A2F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,6 +404,7 @@
 				F58B8C901C78AB4F00A14A2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F58B8C911C78AB4F00A14A2F /* Build configuration list for PBXNativeTarget "thinkUITests" */ = {
 			isa = XCConfigurationList;
@@ -396,6 +413,7 @@
 				F58B8C931C78AB4F00A14A2F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
